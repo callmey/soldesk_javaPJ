@@ -20,7 +20,7 @@ public class ZodiacSign {
 		// 콘솔에 당신은 ~~띠 입니다 출력해보세요
 		/*
 		if((year >= 1984 && year < 1996) || (year >= 1996 && year < 2018) || year >= 2018) {
-			for(int i = 0; i < 11; i++) {
+			for(int i = 0; i < 12; i++) {
 				if((year == (1984 + i)) || (year == (1996 + i)) || (year == (2018 + i)))  {
 					switch(i) {
 						case 0: System.out.println("당신은 쥐띠 입니다."); break;
@@ -38,8 +38,8 @@ public class ZodiacSign {
 						}
 				}
 			}
-		}	*/
-		
+		}	
+		*/
 		year %= 12;
 		
 		if (year==4) {
@@ -78,7 +78,6 @@ public class ZodiacSign {
 		if (year==3) {
 			System.out.println("당신은 돼지띠 입니다.");
 		}
-		
 	}
 }
 
