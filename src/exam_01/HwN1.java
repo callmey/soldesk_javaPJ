@@ -2,7 +2,7 @@ package exam_01;
 
 import java.util.Scanner;
 
-public class HwNo {
+public class HwN1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
