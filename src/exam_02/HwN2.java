@@ -77,18 +77,32 @@ public class HwN2 {
 		System.out.println("--------------------------------------");
 		System.out.println();
 		
-		/*
-		System.out.println("6. 화폐교환기 : 사용자로부터 숫자를 입력받아  화폐 몇장, 동전 몇 개로 교환가능한지 메세지를 출력하시는 코드를 작성하시오");
-		int money = sc.nextInt();
-		sub
 		
-		int[] m = new int[5];
-		
-		for(int i=0; i < m.length; i++ ) {
+		System.out.println("6. 화폐교환기 : 사용자로부터 숫자를 입력받아  화폐 몇 장, 동전 몇 개로 교환가능한지 메세지를 출력하시는 코드를 작성하시오");
+		System.out.print("숫자 입력 : ");
+		Scanner sc2 = new Scanner(System.in);
+		String money = sc2.nextLine();
+		char[] m = new char[money.length()];
+		int[] m2 = new int[m.length];
 			
-		}*/
-
+		for(int i=0; i < m.length; i++ ) {
+			m[i] = money.charAt(i);
+			m[i] -= 48;
+			m2[i] = (int)m[i];
+			System.out.print(m2[i]+ " ");
+		}
 		
+		
+		//for(int i=m.length; i < 0; i--) {
+			if(m2[1] != 0) {
+				System.out.println("십원 : " + m2[1] + "개");
+			}
+			else if(m2[2] != 0) {
+				System.out.println("백원 :" + m2[2] + "개");
+			}
+		//}
+
+	
 
 	}
 }
