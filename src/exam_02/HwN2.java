@@ -78,29 +78,31 @@ public class HwN2 {
 		System.out.println();
 		
 		
-		System.out.println("6. 화폐교환기 : 사용자로부터 숫자를 입력받아  화폐 몇 장, 동전 몇 개로 교환가능한지 메세지를 출력하시는 코드를 작성하시오");
+		System.out.println("6. 화폐교환기 : 사용자로부터 숫자를 입력받아  화폐 몇 장, 동전 몇 개로 교환가능한지 메세지를 출력하시는 코드를 작성하시오.");
 		System.out.print("숫자 입력 : ");
 		Scanner sc2 = new Scanner(System.in);
-		String money = sc2.nextLine();
-		char[] m = new char[money.length()];
-		int[] m2 = new int[m.length];
-			
-		for(int i=0; i < m.length; i++ ) {
-			m[i] = money.charAt(i);
-			m[i] -= 48;
-			m2[i] = (int)m[i];
-			System.out.print(m2[i]+ " ");
-		}
+		int money = sc2.nextInt();
+		
+
+		int[] m2 = new int[7];
+		
+		m2[0] = money/50000; // 85310 / 50000 = 1 
+		m2[1] = (money%50000)/10000; // 15310 / 10000 = 1
+		m2[2] = ((money%50000)%10000)/5000; // 15310 % 10000 = 5310 / 5000 = 1
+		m2[3] = (((money%50000)%10000)%5000)/1000; // 15310 % 10000 = 5310 % 5000 = 310 / 1000. (만약 4000원이라면 나머지 값은 그대로 4000) 4000/1000 = 4 
+		m2[4] = ((((money%50000)%10000)%5000)%1000)/500; 
+		m2[5] = (((((money%50000)%10000)%5000)%1000)%500)/100;
+		m2[6] = (((((money%50000)%10000)%5000)%1000)%500%100)/10;
 		
 		
-		//for(int i=m.length; i < 0; i--) {
-			if(m2[1] != 0) {
-				System.out.println("십원 : " + m2[1] + "개");
-			}
-			else if(m2[2] != 0) {
-				System.out.println("백원 :" + m2[2] + "개");
-			}
-		//}
+		
+		System.out.println("오만원 권 : " + m2[0] + " 장");
+		System.out.println("만원 권 : " + m2[1] + " 장");
+		System.out.println("오천원 권 : " + m2[2] + " 장");
+		System.out.println("천원 권 : " + m2[3] + " 장");
+		System.out.println("오백원 권 : " + m2[4] + " 개");
+		System.out.println("백원 권 : " + m2[5] + " 개");
+		System.out.println("십원 권 : " + m2[6] + " 개");
 
 	
 
