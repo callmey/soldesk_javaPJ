@@ -45,36 +45,84 @@ public class HwN3 {
 		
 	
 		int[] data  = { 100,20,5,2,3,34,65,23,66,200};
+		int[] data1  = { 100,20,5,2,3,34,65,23,66,200};
+		int[] data2  = { 100,20,5,2,3,34,65,23,66,200};
 		
-		int min; 
+		
+		int min, temp; 
 		
 		for(int i = 0; i < data.length-1; i++) {
-			if(data[i] < data[i+1]) {
-				min = data[i];
+			min = i;
+			for(int j = i + 1; j < data.length; j++) {
+				if(data[j] < data[min]) { // 앞자리 하나를 비운 다음 자리 숫자가 맨 앞자리보다 작으면
+					min = j; // 최솟값 변수는 그 자리로 다시 세팅 (결국 가장 작은 값을 차례로 찾은 다음에 맨 앞자리와 나중에 비교함.)
+				}
 			}
 			
-					
-			/*
-				    int indexMin, temp; //최솟값 
-	
-				    for (int i = 0; i < list.length - 1; i++) {
-				        indexMin = i; // 최소값은 0.
-				        for (int j = i + 1; j < list.length; j++) { // index 1 <= j< 10 반복
-				            if (list[j] < list[indexMin]) { // 앞자리 하나를 비운 다음 자리 숫자가 맨 앞자리보다 작으면
-				                indexMin = j; // 최솟값 변수는 j(맨 앞자리 수보다 작은 것)
-				            }
-				        }
-				        temp = list[indexMin];
-				        list[indexMin] = list[i];
-				        list[i] = temp;
-				    }
-			*/
+			temp = data[min];
+			data[min] = data[i];
+			data[i] = temp;
 			
-			System.out.print(data[i+1] + " ");
 		}
-	
-	}
-	
-	
+		System.out.println("선택 정렬 후 : ");
+		for(int i = 0; i<data.length; i++) {
 
+			System.out.print(data[i] + " ");
+			
+		}
+		
+		System.out.println();
+			
+		
+		 /* 
+			     버블 정렬(Bubble Sort)은 인접한 두개의 원소를 비교하여 자리를 교환하는 방식으로 정렬
+			     첫번째 원소부터 인접한 원소끼리 계속 자리를 교환하면서 맨 마지막자리로 이동하는 모습이
+			     물속에서 물 위로 올라오는 물방울 모양과 같다고 해서 버블 정렬이라고 한다.
+	     */
+		
+		
+		for(int i = data1.length-1; i > 0 ; i--) {
+			for(int j = 0; j < i; j++) {
+				if(data1[j] > data1[j+1]) {
+					temp = data1[j];
+					data1[j] = data1[j+1];
+					data1[j+1] = temp;
+				}
+			}
+			
+		}
+		
+		System.out.println();
+		
+		System.out.println("버블 정렬 후 : ");
+		for(int i = 0; i<data1.length; i++) {
+
+			System.out.print(data1[i] + " ");
+			
+		}
+		
+		System.out.println();
+		System.out.println();
+		
+		System.out.println("삽인 정렬 후 : ");
+		
+		int j = 0;
+        for(int i=1; i<data2.length; i++){
+            temp = data2[i]; // 삽입대상 임시 저장.
+            j = i; //index 임시저장
+            while(j > 0 && temp < data2[j-1]){ //삽입대상이 정렬된 대상들보다 작은 경우가 있는 경우 
+                data2[j] = data2[j-1]; //밀기
+                j--; //다음 비교를 위해 인덱스 이동
+            }
+            data2[j] = temp; //최종으로 삽입될 위치에 삽입대상 삽입 
+             
+        }
+        
+        for(int i = 0; i<data2.length; i++) {
+			System.out.print(data2[i] + " ");
+			
+		}
+		
+    }
+	
 }
