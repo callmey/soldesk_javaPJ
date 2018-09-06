@@ -7,7 +7,6 @@ package exam_04;
 	        float f = 240.3f;
 
 	        FormatData fd = new FormatData();
-	        
 	        fd.print(a);
 	        fd.print(b);
 	        fd.print(f);
