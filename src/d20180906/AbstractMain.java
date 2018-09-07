@@ -5,7 +5,7 @@ public class AbstractMain {
 		고래 w = new 고래();
 		토끼 r = new 토끼();
 		다람쥐 s = new 다람쥐();
-		Horse h = new Horse();
+		말 h = new 말();
 		
 		w.먹기();
 		r.자기();
