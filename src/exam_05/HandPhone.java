@@ -7,7 +7,18 @@ public class HandPhone{
     private int price;
     private int phoneNumber;
     
+    HandPhone() {} // framework 사용 시 기본 생성자 만들기 
     
+    
+	public HandPhone(String productName, String productType, int price, int phoneNumber) {
+		super(); // Object를 상속하는 것.(모든 클래스를 상속함) 생략가능.
+		this.productName = productName;
+		this.productType = productType;
+		this.price = price;
+		this.phoneNumber = phoneNumber;
+	} // source - constructor using field 로 생성
+
+
 	public String getProductName() {
 		return productName;
 	}
