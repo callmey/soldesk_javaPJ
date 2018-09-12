@@ -2,12 +2,10 @@ package d20180911;
 
 import java.awt.Button;
 import java.awt.Color;
-import java.awt.Event;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.xml.ws.handler.Handler;
 
 // 이벤트 처리
 // 1. 이벤트 소스 결정
