@@ -4,9 +4,10 @@ import java.awt.Button;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Arrays;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 
-public class AWTQ1 extends Frame implements ActionListener{
+public class AWTQ1 extends Frame implements ActionListener, WindowListener{
 	Button btn;
 	
 	AWTQ1() {
@@ -15,6 +16,7 @@ public class AWTQ1 extends Frame implements ActionListener{
 		setLocation(600, 200);
 		setVisible(true);
 		
+		this.addWindowListener(this);
 		
 		btn = new Button("Lotto");
 		add(btn, "South");
@@ -50,10 +52,56 @@ public class AWTQ1 extends Frame implements ActionListener{
 		for (int i = 0; i < 6; i++) {
 			System.out.print(rnd[i] + " ");
 		}
+		System.out.println();
 	}
 	
 	public static void main(String[] args) {
 		new AWTQ1();
 	}
+
+	@Override
+	public void windowOpened(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowClosing(WindowEvent e) {
+		// TODO Auto-generated method stub
+		System.out.println("프로그램을 종료합니다");
+		System.exit(0);
+	}
+
+	@Override
+	public void windowClosed(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowIconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeiconified(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowActivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void windowDeactivated(WindowEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	
 	
 }
