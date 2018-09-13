@@ -46,35 +46,23 @@ public class HwN3 {
 	
 		int[] data  = { 100,20,5,2,3,34,65,23,66,200};
 		
-		int min; 
+		int min, temp; 
 		
 		for(int i = 0; i < data.length-1; i++) {
-			if(data[i] < data[i+1]) {
-				min = data[i];
+			min = i;
+			for(int j = i + 1; j< data.length; j++) {
+				if(data[j] < data[min]) {
+					min = j;
+					System.out.print(min + " ");
+					System.out.print(data[j] + " ");
+				}
 			}
-			
-					
-			/*
-				    int indexMin, temp; //최솟값 
-	
-				    for (int i = 0; i < list.length - 1; i++) {
-				        indexMin = i; // 최소값은 0.
-				        for (int j = i + 1; j < list.length; j++) { // index 1 <= j< 10 반복
-				            if (list[j] < list[indexMin]) { // 앞자리 하나를 비운 다음 자리 숫자가 맨 앞자리보다 작으면
-				                indexMin = j; // 최솟값 변수는 j(맨 앞자리 수보다 작은 것)
-				            }
-				        }
-				        temp = list[indexMin];
-				        list[indexMin] = list[i];
-				        list[i] = temp;
-				    }
-			*/
-			
-			System.out.print(data[i+1] + " ");
+			temp = data[min];
+			data[min] = data[i];
+			data[i] = temp;
+			//System.out.print(data[i] + " ");
 		}
-	
+		
 	}
-	
-	
 
 }
