@@ -1,22 +1,52 @@
 package exam_08;
 
+import java.awt.Button;
 import java.awt.Frame;
-import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
+
 // 로봇 모양(버튼 혹은 그래픽 상관없음) 이동, 점프
 public class Q1 extends Frame implements KeyListener{
-	Graphics lobot;
+	
+	Button btn1;
+	Button btn2;
+	Button btn3;
+	Button btn4;
+	Button btn5;
+	Button btn6;
+	
 	
 	Q1() {
 		super("Lobot");
-		setBounds(100, 100, 800, 600);
+		setSize(800, 600);
+		setLayout(null);
 		setVisible(true); 
 		
 		// 컨테이너 사이즈 시각화
+		
+		btn1 = new Button("");
+		btn2 = new Button("");
+		btn3 = new Button("");
+		btn4 = new Button("");
+		btn5 = new Button("");
+		btn6 = new Button("");
+		
+		btn1.setBounds(50, 400, 30, 40); // 왼쪽 팔
+		btn2.setBounds(95, 350, 35, 35); // 머리
+		btn3.setBounds(150, 400, 30, 40); //오른쪽 팔
+		btn4.setBounds(90, 390, 48, 100); // 몸통
+		btn5.setBounds(90, 500, 20, 50); //왼쪽 다리
+		btn6.setBounds(120, 500, 20, 50); // 오른쪽 다리
+		
+		add(btn1);
+		add(btn2);
+		add(btn3);
+		add(btn4);
+		add(btn5);
+		add(btn6);
 		
 	addWindowListener(new WindowAdapter() {
 		@Override
@@ -32,7 +62,7 @@ public class Q1 extends Frame implements KeyListener{
 	
 	} // 생성자 end
 	
-	@Override
+	/*@Override
 	public void paint(Graphics g) {
 		// TODO Auto-generated method stub
 		super.paint(g);
@@ -42,7 +72,11 @@ public class Q1 extends Frame implements KeyListener{
 		g.drawRect(90, 390, 48, 100); // 몸통
 		g.drawRect(90, 500, 20, 50); // 왼쪽 다리
 		g.drawRect(120, 500, 20, 50); // 오른쪽 다리
-	}
+		
+		g.getClipBounds()
+	
+	}*/
+	
 	
 	
 	public static void main(String[] args) {
@@ -63,16 +97,43 @@ public class Q1 extends Frame implements KeyListener{
 		
 		System.out.println("e : " +key);
 		
-		/*// 그래픽 현재 좌표
-		Graphics o1 = 
-		int y = btn1.getY();
-
-		if(key == 37) x -= 10;
-		else if(key == 38) y -= 10;
-		else if(key == 39) x += 10;
-		else if(key == 40) y += 10;
+		int x1 = btn1.getX();
+		int y1 = btn1.getY();
+		int x2 = btn2.getX();
+		int y2 = btn2.getY();
+		int x3 = btn3.getX();
+		int y3 = btn3.getY();
+		int x4 = btn4.getX();
+		int y4 = btn4.getY();
+		int x5 = btn5.getX();
+		int y5 = btn5.getY();
+		int x6 = btn6.getX();
+		int y6 = btn6.getY();
 		
-		btn1.setLocation(x,y); // 위치 데이터를 받아서 setLocation으로 설정해야함.
+		if(key == 37) {
+			x1 -= 10; x2 -= 10; x3 -= 10;
+			x4 -= 10; x5 -= 10; x6 -= 10;
+		}
+		else if(key == 38) {
+			y1 -= 10; y2 -= 10; y3 -= 10; 
+			y4 -= 10; y5 -= 10; y6 -= 10;
+		}
+		else if(key == 39) {
+			x1 += 10; x2 += 10; x3 += 10;
+			x4 += 10; x5 += 10; x6 += 10;
+		}
+		else if(key == 40) {
+			y1 += 10; y2 += 10; y3 += 10;
+			y4 += 10; y5 += 10; y6 += 10;
+		}
+		
+		btn1.setLocation(x1,y1);
+		btn2.setLocation(x2,y2);
+		btn3.setLocation(x3,y3);
+		btn4.setLocation(x4,y4);
+		btn5.setLocation(x5,y5);
+		btn6.setLocation(x6,y6);
+		
 		
 		// 점프 - 스페이스바
 		if(key==32) {
@@ -87,6 +148,11 @@ public class Q1 extends Frame implements KeyListener{
 					e1.printStackTrace();
 				} 
 				btn1.setLocation(btn1.getX()+10, btn1.getY()-10);
+				btn2.setLocation(btn2.getX()+10, btn2.getY()-10);
+				btn3.setLocation(btn3.getX()+10, btn3.getY()-10);
+				btn4.setLocation(btn4.getX()+10, btn4.getY()-10);
+				btn5.setLocation(btn5.getX()+10, btn5.getY()-10);
+				btn6.setLocation(btn6.getX()+10, btn6.getY()-10);
 			}
 			
 			for(int i=0; i<7; i++) {
@@ -98,7 +164,14 @@ public class Q1 extends Frame implements KeyListener{
 					e1.printStackTrace();
 				} 
 		btn1.setLocation(btn1.getX()+10, btn1.getY()+10);
-			*/
+		btn2.setLocation(btn2.getX()+10, btn2.getY()+10);
+		btn3.setLocation(btn3.getX()+10, btn3.getY()+10);
+		btn4.setLocation(btn4.getX()+10, btn4.getY()+10);
+		btn5.setLocation(btn5.getX()+10, btn5.getY()+10);
+		btn6.setLocation(btn6.getX()+10, btn6.getY()+10);
+		
+			}
+		}
 	}
 
 	@Override
