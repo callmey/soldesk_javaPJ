@@ -17,12 +17,11 @@ public class AWTQ3 extends Frame implements ActionListener, WindowListener{
 	int cnt = 0;
 	
 	AWTQ3() {
-		setSize(400, 300);
 		setSize(200, 300);
 		setLocation(600, 200);
 		setLayout(null);//no layout manager  
 		
-		this.addWindowListener(this);
+		this.addWindowListener(this); // 
 		
 		
 		btn1 = new Button("NEXT");
