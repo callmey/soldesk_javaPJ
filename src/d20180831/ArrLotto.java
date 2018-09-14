@@ -1,7 +1,22 @@
 package d20180831;
 
-public class ArrLotto {
+import java.awt.TextField;
 
+public class ArrLotto {
+	public void print(int[] rnd) {
+		for(int i=0; i<6; i++) {
+			System.out.print(rnd[i]+ "\t");
+		}
+		System.out.println();
+	}
+	public int[] print2(int[] rnd) {
+		for(int i=0; i<6; i++) {
+			System.out.println(rnd[i] + "\t");
+		}
+		return rnd;
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		int[] rnd = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
@@ -10,7 +25,9 @@ public class ArrLotto {
 				31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 
 				41, 42, 43, 44, 45 };
 		
-		System.out.println(Math.random()*45);
+		ArrLotto al = new ArrLotto();
+		
+		//System.out.println(Math.random()*45);
 		// 0.0 < Math.random() < 1.0 : double type °ª
 		// 0 < Math.random()*10 < 10 : double type °ª
 		// 0 < Math.random()*45 < 45 : double type °ª
@@ -38,9 +55,7 @@ public class ArrLotto {
 			rnd[second] = temp;
 		}
 		
-			for(int i=0; i<6; i++) {
-				System.out.print(rnd[i]+ "\t");
-			}
+		al.print(rnd);
 			
 	}
 

@@ -16,6 +16,7 @@ public class 말 extends 포유류 implements Flyable { //다중상속하고 싶을 때 인터�
 	public void 달리기() {
 		System.out.println("달그닥 달그닥");
 	}
+	
 	@Override
 	public void 비행() {
 		System.out.println("현질 최고! 잘 난다");
