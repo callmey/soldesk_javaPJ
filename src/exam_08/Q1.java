@@ -93,7 +93,7 @@ public class Q1 extends Frame implements KeyListener{
 	public void keyPressed(KeyEvent e) {
 		// TODO Auto-generated method stub
 		
-		int key = e.getKeyCode();
+		/*int key = e.getKeyCode();
 		
 		System.out.println("e : " +key);
 		
@@ -170,8 +170,50 @@ public class Q1 extends Frame implements KeyListener{
 		btn5.setLocation(btn5.getX()+10, btn5.getY()+10);
 		btn6.setLocation(btn6.getX()+10, btn6.getY()+10);
 		
+		*/
+		
+		// ----------------------------코드 줄이기-------------------------
+		
+		int key = e.getKeyCode();
+		int i;
+		
+		int[] x = {btn1.getX(), btn2.getX(), btn3.getX(), btn4.getX(), btn5.getX(), btn6.getX()};
+		int[] y = {btn1.getY(), btn2.getY(), btn3.getY(), btn4.getY(), btn5.getY(), btn6.getY()};
+		
+		if(key==37) {
+			for(i=0; i<6; i++) {
+				x[i] -= 10; y[i] = y[i];
+			}
+			/*btn1.setLocation(x[0],y[0]);
+			btn2.setLocation(x[1],y[1]);
+			btn3.setLocation(x[2],y[2]);
+			btn4.setLocation(x[3],y[3]);
+			btn5.setLocation(x[4],y[4]);
+			btn6.setLocation(x[5],y[5]);*/
+		
+		}	
+		else if(key==38) {
+			for(i=0; i<6; i++) {
+				x[i] = x[i]; y[i] -= 10;
 			}
 		}
+		else if(key==39) {
+			for(i=0; i<6; i++) {
+				x[i] += 10; y[i] = y[i];
+			}
+		}
+		else if(key==40) {
+			for(i=0; i<6; i++) {
+				x[i] = x[i]; y[i] += 10;
+			}
+		}
+		
+		Button[] btn = {btn1, btn2, btn3, btn4, btn5,btn6};
+		
+		for(i =0; i<6; i++) {
+			btn[i].setLocation(x[i], y[i]); // 위 btn들의 setLocation을 배열로 묶음
+		}
+
 	}
 
 	@Override
