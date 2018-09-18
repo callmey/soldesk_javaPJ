@@ -6,20 +6,21 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
 
 public class Memo extends JFrame implements ActionListener{
 	
 	JTextArea jta; // 대화 문장
 	JTextField jtf; // 대화창
-	JButton jbtn1; // 버튼
-	JButton jbtn2; // 버튼
-	JButton jbtn3; // 버튼
-	JButton jbtn4; // 버튼
-	JButton jbtn5; // 버튼
+	JMenu jbtn1, jbtn2, jbtn3, jbtn4, jbtn5 ; // 버튼
+	JMenuItem newM, openM, saveM, printM, exitM; 
+	JMenuItem cutM, copyM, pastM;
 	
 	// 컴포넌트를 부착할 패널
 	JPanel jp; 
@@ -32,16 +33,25 @@ public class Memo extends JFrame implements ActionListener{
 		setLayout(null);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		
+		
 		jta = new JTextArea();
 		jtf = new JTextField(80);
-		jbtn1 = new JButton("파일(F)");
-		jbtn2 = new JButton("편집(E)");
-		jbtn3 = new JButton("서식(O)");
-		jbtn4 = new JButton("보기(v)");
-		jbtn5 = new JButton("도움말(H)");
+		jbtn1 = new JMenu("파일(F)");
+		jbtn2 = new JMenu("편집(E)");
+		jbtn3 = new JMenu("서식(O)");
+		jbtn4 = new JMenu("보기(v)");
+		jbtn5 = new JMenu("도움말(H)");
+		newM = new JMenuItem("새로만들기");
+		openM = new JMenuItem("열기");
+		saveM = new JMenuItem("저장");
+		printM = new JMenuItem("인쇄");
+		exitM = new JMenuItem("끝내기");
+		cutM = new JMenuItem("잘라내기");
+		copyM = new JMenuItem("복사");
+		pastM = new JMenuItem("붙여넣기"); 
 		
 		
-		JButton[] jbtn = {jbtn1, jbtn2, jbtn3, jbtn4, jbtn5};
+		JMenu[] jbtn = {jbtn1, jbtn2, jbtn3, jbtn4, jbtn5};
 		
 		jp = new JPanel();
 		jsp = new JScrollPane(jta, 
@@ -54,9 +64,6 @@ public class Memo extends JFrame implements ActionListener{
 		jp.setBackground(Color.white);
 		
 		for(int i=0; i<5; i++ ) {
-			
-		}
-		for(int i=0; i<5; i++ ) {
 			jbtn[i].setBackground(Color.white);
 		}
 		
@@ -66,9 +73,9 @@ public class Memo extends JFrame implements ActionListener{
 		jbtn4.setBackground(Color.white);
 		jbtn5.setBackground(Color.white);*/
 		
-		for(int i=0; i<5; i++ ) {
+		/*for(int i=0; i<5; i++ ) {
 			jbtn[i].setFocusPainted(true);
-		}
+		}*/
 		
 	/*	jbtn1.setFocusPainted(true);
 		jbtn2.setFocusPainted(true);
@@ -76,12 +83,12 @@ public class Memo extends JFrame implements ActionListener{
 		jbtn4.setFocusPainted(true);
 		jbtn5.setFocusPainted(true);*/
 		
-		jsp.setBounds(0, 50, 600, 600);
+		jsp.setBounds(0, 30, 600, 600);
 		add(jsp);
 		
-		for(int i=0; i<5; i++ ) {
+		/*for(int i=0; i<5; i++ ) {
 			jbtn[i].setFocusPainted(true);
-		}
+		}*/
 		
 		int x = 0;
 		for(int i=0; i<5; i++ ) {
@@ -93,12 +100,23 @@ public class Memo extends JFrame implements ActionListener{
 			jp.add(jbtn[i]);
 		}
 		
-		jp.setBounds(0, 30, 600, 50);
+		jbtn1.add(newM); jbtn1.add(openM);  jbtn1.add(saveM); 
+		jbtn1.add(printM); jbtn1.add(exitM);
+		
+		
+		jp.setBounds(0, 0, 600, 50);
 		add(jp);
 		
 		for(int i=0; i<5; i++ ) {
 			jbtn[i].addActionListener(this);
 		}
+		
+		newM.addActionListener(this); 
+		openM.addActionListener(this);
+		saveM.addActionListener(this); 
+		printM.addActionListener(this);
+		exitM.addActionListener(this);
+		
 		
 		setVisible(true);
 		
