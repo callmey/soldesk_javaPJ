@@ -17,6 +17,9 @@ public class SearchWord extends Frame implements ActionListener{
 	TextField tf2;
 	Button btn1;
 	Button btn2;
+	HashSet<String> hs = new HashSet<>();
+	String str;
+	
 	
 	
 	SearchWord() {
@@ -62,20 +65,19 @@ public class SearchWord extends Frame implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		Object obj = e.getSource();
-		HashSet hs = new HashSet();
-		String str;
 		
-		if(tf1.getText()!= null) {
-			
-			
+		if(obj==btn1) {
+			if(tf1.getText()!= null) {
+				hs.add(tf1.getText());
+			}	
+			System.out.println("insert 값 : " + hs);
 		}
 		
-		/*else if(obj == btn2) {*/
-		/*	System.out.println(hs);
-			it=hs.iterator();
-			while(it.hasNext()) {
-				obj1 = it.next();
-				System.out.print(obj1 + " ");
-			}*/
+		else if(obj == btn2) {
+			System.out.println(hs);
+			str = hs.toString();
+			System.out.println(tf2.getText() + "의 위치 : " + str.indexOf(tf2.getText()));
+			
+		}
 	}		
 } //class end

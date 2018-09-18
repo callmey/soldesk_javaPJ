@@ -122,7 +122,7 @@ public class SwingChatting extends JFrame implements ActionListener, KeyListener
 	public void keyPressed(KeyEvent e) {
 		int key = e.getKeyCode();
 		
-		if(key==10) {
+		if(key==10) { //Enter
 			appendData();
 			jtf.requestFocus();
 		}
