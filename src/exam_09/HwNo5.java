@@ -9,19 +9,15 @@ public class HwNo5 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		HashSet<Integer> hs = new HashSet<>();
-		int[] value = new int[10];
-		
+	
 		Random rnd = new Random();
-		int num = 0;
 		for(int i =0; i<10; i++) {
-			num = rnd.nextInt(100); // 100 사이
-			System.out.print(num+ " "
-					+ "");
+			hs.add(rnd.nextInt(100)); // 100 사이
 		}
 
 		Iterator it = hs.iterator();
 		while(it.hasNext()) {
-			System.out.print(it.next());
+			System.out.print(it.next() + " ");
 		}
 	}
 }
